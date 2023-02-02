@@ -4,7 +4,8 @@ const message = document.querySelector(".error-message");
 const pattern = /^[A-Za-z0-9._+-]+[A-Za-z0-9]+@[A-Za-z0-9]+\.[A-Za-z]{2,}$/;
 
 
-btn.addEventListener("click", () => {
+btn.addEventListener("click", (e) => {
+    e.preventDefault();
     if(email.value === "" || !pattern.test(email.value)){
         message.style.display = "block";
         message.textContent = "Please provide a valid email address";
